@@ -1,0 +1,420 @@
+{
+  "subjects": [
+    {
+      "name": "DBMS",
+      "difficulty": "Medium",
+      "priority": 4
+    },
+    {
+      "name": "JAVA",
+      "difficulty": "Medium",
+      "priority": 4
+    },
+    {
+      "name": "AIML",
+      "difficulty": "Hard",
+      "priority": 5
+    }
+  ],
+  "exams": [
+    {
+      "subject": "DBMS",
+      "date": "2026-11-07"
+    },
+    {
+      "subject": "JAVA",
+      "date": "2026-11-28"
+    }
+  ],
+  "preferences": {
+    "daily_hours": 8.0,
+    "block_size": 1.0,
+    "break_minutes": 20
+  },
+  "timetable": {
+    "Monday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      }
+    ],
+    "Tuesday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      }
+    ],
+    "Wednesday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": true
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      }
+    ],
+    "Thursday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "DBMS",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      }
+    ],
+    "Friday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": true
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      }
+    ],
+    "Saturday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "AIML",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": true
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      }
+    ],
+    "Sunday": [
+      {
+        "start": "08:00",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "09:15",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "10:30",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "11:45",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "13:00",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "14:15",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "15:30",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      },
+      {
+        "start": "16:45",
+        "duration_hrs": 1.0,
+        "subject": "JAVA",
+        "missed": false
+      }
+    ]
+  },
+  "missed_sessions": [
+    {
+      "day": "Monday",
+      "slot_index": 2
+    },
+    {
+      "day": "Monday",
+      "slot_index": 5
+    },
+    {
+      "day": "Wednesday",
+      "slot_index": 3
+    },
+    {
+      "day": "Wednesday",
+      "slot_index": 5
+    },
+    {
+      "day": "Wednesday",
+      "slot_index": 6
+    },
+    {
+      "day": "Friday",
+      "slot_index": 2
+    },
+    {
+      "day": "Saturday",
+      "slot_index": 5
+    },
+    {
+      "day": "Monday",
+      "slot_index": 7
+    }
+  ]
+}
