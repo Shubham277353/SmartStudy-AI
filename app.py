@@ -26,202 +26,338 @@ st.set_page_config(
 # ── Global CSS ────────────────────────────────────────────────────────────────
 
 st.markdown("""
+
 <style>
-/* ── Base ── */
-html, body, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
-    background-color: #16181d;
-    color: #e2e4e9;
-    font-family: Inter, system-ui, -apple-system, sans-serif;
+/* ===== SMARTSTUDY DESIGN SYSTEM ===== */
+
+:root {
+    --bg: #111318;
+    --surface: #191d26;
+    --surface-hover: #222735;
+    --border: #2a3040;
+    --text: #edf0f7;
+    --muted: #929bad;
+    --accent: #6685ff;
+    --accent-soft: rgba(102, 133, 255, 0.13);
 }
-[data-testid="stHeader"] { background-color: #16181d; }
-#MainMenu, footer, [data-testid="stToolbar"] { display: none !important; }
-[data-testid="stMainBlockContainer"] { padding-top: 1.8rem !important; }
 
+/* Main application */
+html, body, [data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+}
 
-/* ── Tabs ── */
+[data-testid="stHeader"] {
+    background: var(--bg);
+}
+
+[data-testid="stMainBlockContainer"] {
+    padding-top: 1.5rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1500px;
+}
+
+#MainMenu, footer, [data-testid="stToolbar"] {
+    display: none !important;
+}
+
+/* Typography */
+h1 {
+    color: var(--text) !important;
+    font-size: 2.35rem !important;
+    font-weight: 750 !important;
+    letter-spacing: -1.2px !important;
+}
+
+h2, h3 {
+    color: var(--text) !important;
+    font-weight: 650 !important;
+    letter-spacing: -0.3px;
+}
+
+p, label, span {
+    color: inherit;
+}
+
+/* Header caption */
+[data-testid="stCaptionContainer"] {
+    color: var(--muted) !important;
+    font-size: 0.95rem;
+}
+
+/* Tabs */
 [data-testid="stTabs"] [role="tablist"] {
-    border-bottom: 1px solid #2a2d36;
-    gap: 0;
-    background: transparent;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
 }
+
 [data-testid="stTabs"] [role="tab"] {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: #6b7280;
-    padding: 0.5rem 1.1rem;
-    background: transparent;
-    border-radius: 0;
-    /* reset every border so Streamlit's default red/coloured indicator can't show */
-    border-top: 2px solid transparent !important;
-    border-left: 2px solid transparent !important;
-    border-right: 2px solid transparent !important;
+    color: var(--muted) !important;
+    font-size: 0.88rem;
+    font-weight: 550;
+    padding: 0.75rem 1.1rem;
+    border: none !important;
     border-bottom: 2px solid transparent !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
-    color: #e2e4e9 !important;
-    border-top: 2px solid transparent !important;
-    border-left: 2px solid transparent !important;
-    border-right: 2px solid transparent !important;
-    border-bottom: 2px solid #3b82f6 !important;
     background: transparent !important;
+    transition: all 0.2s ease;
 }
+
 [data-testid="stTabs"] [role="tab"]:hover {
-    color: #c9cdd6;
-    border-bottom: 2px solid #4b5563 !important;
+    color: var(--text) !important;
+    background: var(--accent-soft) !important;
 }
 
-/* ── Section labels ── */
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: var(--accent) !important;
+    border-bottom: 2px solid var(--accent) !important;
+}
+
+/* Section headings */
 .ss-section {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    color: #aeb9d0;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: #6b7280;
-    margin: 1.2rem 0 0.5rem 0;
+    margin: 1.1rem 0 0.9rem 0;
 }
 
-/* ── Buttons ── */
+/* Buttons */
 [data-testid="stButton"] > button {
-    background-color: #1e2028;
-    color: #e2e4e9;
-    border: 1px solid #2a2d36;
-    border-radius: 6px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 0.4rem 1rem;
-    transition: background 0.15s, border-color 0.15s;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.55rem 1.15rem;
+    min-height: 2.6rem;
+    transition: all 0.2s ease;
 }
+
 [data-testid="stButton"] > button:hover {
-    background-color: #2a2d36;
-    border-color: #3b82f6;
-    color: #e2e4e9;
-}
-[data-testid="stButton"] > button[kind="primary"],
-.ss-primary-btn [data-testid="stButton"] > button {
-    background-color: #3b82f6;
-    border-color: #3b82f6;
-    color: #fff;
-}
-[data-testid="stButton"] > button[kind="primary"]:hover,
-.ss-primary-btn [data-testid="stButton"] > button:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    color: white;
+    transform: translateY(-1px);
 }
 
-/* ── Inputs / selects ── */
+[data-testid="stButton"] > button[kind="primary"] {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+}
+
+[data-testid="stButton"] > button[kind="primary"]:hover {
+    background: #5272ef;
+    border-color: #5272ef;
+}
+
+/* Text inputs */
 [data-testid="stTextInput"] input,
-[data-testid="stSelectbox"] > div > div,
 [data-testid="stDateInput"] input {
-    background-color: #1e2028 !important;
-    border: 1px solid #2a2d36 !important;
-    color: #e2e4e9 !important;
-    border-radius: 6px !important;
-    font-size: 0.83rem !important;
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 9px !important;
+    min-height: 2.7rem;
 }
+
 [data-testid="stTextInput"] input:focus,
-[data-testid="stSelectbox"] > div > div:focus-within {
-    border-color: #3b82f6 !important;
-    box-shadow: none !important;
+[data-testid="stDateInput"] input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px var(--accent-soft) !important;
 }
 
-/* ── Sliders ── */
-[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
-    background-color: #3b82f6 !important;
-}
-[data-testid="stSlider"] [data-baseweb="slider"] div[class*="Track"] {
-    background-color: #2a2d36 !important;
-}
-
-/* ── Dataframes ── */
-[data-testid="stDataFrame"] { border: 1px solid #2a2d36; border-radius: 6px; overflow: hidden; }
-[data-testid="stDataFrame"] th {
-    background-color: #1e2028 !important;
-    color: #9ca3af !important;
-    font-size: 0.75rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-}
-[data-testid="stDataFrame"] td {
-    background-color: #16181d !important;
-    color: #e2e4e9 !important;
-    font-size: 0.82rem !important;
+/* Select boxes */
+[data-testid="stSelectbox"] > div > div {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+    border-radius: 9px !important;
+    color: var(--text) !important;
 }
 
-/* ── Info / success / warning / error boxes ── */
+/* Sliders */
+[data-testid="stSlider"] [role="slider"] {
+    background: var(--accent) !important;
+}
+
+/* Checkboxes */
+[data-testid="stCheckbox"] label {
+    color: var(--text) !important;
+}
+
+/* Dataframes */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Alerts */
 [data-testid="stAlert"] {
-    border-radius: 6px !important;
-    font-size: 0.82rem !important;
+    border-radius: 9px;
+    border: 1px solid var(--border);
 }
 
-/* ── Divider ── */
-hr { border-color: #2a2d36 !important; }
+/* Dividers */
+hr {
+    border-color: var(--border) !important;
+}
 
-/* ── Timetable HTML table ── */
-.tt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* Timetable */
+.tt-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
 .tt-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     min-width: 560px;
 }
+
 .tt-table th {
-    background: #1e2028;
-    color: #3b82f6;
-    font-size: 0.72rem;
+    background: #202635;
+    color: #9db0ff;
+    font-size: 0.73rem;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 8px 10px;
-    border: 1px solid #2a2d36;
+    padding: 13px 10px;
+    border: 1px solid var(--border);
     text-align: center;
-    white-space: nowrap;
 }
+
 .tt-table th.tt-block-col {
-    color: #6b7280;
-    font-size: 0.68rem;
+    color: var(--muted);
     min-width: 52px;
 }
+
 .tt-table td {
-    border: 1px solid #2a2d36;
-    padding: 7px 10px;
-    vertical-align: top;
+    border: 1px solid var(--border);
+    padding: 12px 10px;
+    vertical-align: middle;
     text-align: center;
     min-width: 90px;
 }
-.tt-time  { font-size: 0.68rem; color: #6b7280; display: block; margin-bottom: 2px; }
-.tt-subj  { font-size: 0.82rem; color: #e2e4e9; font-weight: 500; }
-.tt-empty { color: #3a3d47; font-size: 0.8rem; }
-.tt-cell-missed      { background-color: #2d1f1f; }
-.tt-cell-missed      .tt-subj { color: #ef4444; }
-.tt-cell-rescheduled { background-color: #1a2535; }
-.tt-cell-rescheduled .tt-subj { color: #60a5fa; }
-.tt-cell-normal      { background-color: #16181d; }
-.tt-block-label      { color: #4b5563; font-size: 0.72rem; font-weight: 500; }
 
-/* ── Urgency badges ── */
-.urg-critical { color: #ef4444; font-weight: 600; font-size: 0.78rem; }
-.urg-soon     { color: #f59e0b; font-weight: 600; font-size: 0.78rem; }
-.urg-upcoming { color: #10b981; font-weight: 600; font-size: 0.78rem; }
+.tt-time {
+    font-size: 0.7rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 5px;
+}
 
-/* ── Reschedule day label ── */
-.rs-day-label {
+.tt-subj {
+    font-size: 0.84rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.tt-empty {
+    color: #555e70;
+    font-size: 0.8rem;
+}
+
+.tt-cell-missed {
+    background: rgba(239, 68, 68, 0.10);
+}
+
+.tt-cell-missed .tt-subj {
+    color: #fb7777;
+}
+
+.tt-cell-rescheduled {
+    background: rgba(102, 133, 255, 0.12);
+}
+
+.tt-cell-rescheduled .tt-subj {
+    color: #91a7ff;
+}
+
+.tt-cell-normal {
+    background: var(--surface);
+}
+
+.tt-block-label {
+    color: var(--muted);
     font-size: 0.72rem;
+    font-weight: 600;
+}
+
+/* Urgency labels */
+.urg-critical {
+    color: #fb7777;
+    font-weight: 650;
+    font-size: 0.8rem;
+}
+
+.urg-soon {
+    color: #f5bd60;
+    font-weight: 650;
+    font-size: 0.8rem;
+}
+
+.urg-upcoming {
+    color: #56d6a0;
+    font-weight: 650;
+    font-size: 0.8rem;
+}
+
+/* Reschedule labels */
+.rs-day-label {
+    font-size: 0.76rem;
     font-weight: 700;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: #6b7280;
-    margin: 1rem 0 0.3rem 0;
+    color: #9db0ff;
+    margin: 1.2rem 0 0.6rem 0;
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 # ── Header ────────────────────────────────────────────────────────────────────
 
-st.title("SmartStudy AI")
-st.caption("Student Timetable Assistant — Intelligent Study Planning")
+st.markdown(
+    """
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    ">
+        <div style="
+            background: rgba(102, 133, 255, 0.15);
+            border: 1px solid rgba(102, 133, 255, 0.3);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 25px;
+        ">📚</div>
+        <div>
+            <div style="
+                font-size: 2rem;
+                font-weight: 750;
+                letter-spacing: -1px;
+                color: #edf0f7;
+            ">SmartStudy <span style="color: #6685ff;">AI</span></div>
+            <div style="
+                color: #929bad;
+                font-size: 0.9rem;
+                margin-top: 3px;
+            ">Your intelligent study planning assistant</div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.divider()
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
@@ -229,47 +365,125 @@ st.divider()
 tabs = st.tabs(["Setup", "Exams", "Preferences", "Timetable", "Analytics", "Reschedule"])
 
 
+
 # ── Tab 1 – Setup ─────────────────────────────────────────────────────────────
 
 with tabs[0]:
-    col1, col2 = st.columns([1, 1], gap="large")
+    subjects = dm.get_subjects()
 
+    st.markdown(
+        """
+        <div style="margin: 12px 0 22px 0;">
+            <div style="font-size: 1.45rem; font-weight: 700;
+                        color: #edf0f7; letter-spacing: -0.5px;">
+                Manage your subjects
+            </div>
+            <div style="font-size: 0.88rem; color: #929bad; margin-top: 5px;">
+                Add the subjects you want to study and configure their importance.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    col1, col2 = st.columns([0.9, 1.1], gap="large")
+
+    # LEFT CARD — ADD SUBJECT
     with col1:
-        st.markdown('<p class="ss-section">Add Subject</p>', unsafe_allow_html=True)
-        name       = st.text_input("Subject Name", key="subj_name", placeholder="e.g. Data Structures")
-        difficulty = st.selectbox("Difficulty", ["Easy", "Medium", "Hard"], key="subj_diff")
-        priority   = st.slider("Priority", 1, 5, 3, key="subj_prio",
-                               help="1 = lowest priority, 5 = highest priority")
+        with st.container(border=True):
+            st.markdown("### ✨ Add a subject")
+            st.caption("Enter the details of a new subject.")
 
-        if st.button("Add Subject", key="btn_add_subj"):
-            if name.strip():
-                try:
-                    dm.add_subject(name.strip(), difficulty, priority)
-                    st.success(f"'{name.strip()}' added.")
-                    st.rerun()
-                except ValueError as e:
-                    st.error(str(e))
-            else:
-                st.warning("Enter a subject name.")
-
-    with col2:
-        st.markdown('<p class="ss-section">Current Subjects</p>', unsafe_allow_html=True)
-        subjects = dm.get_subjects()
-        if subjects:
-            df = pd.DataFrame(subjects).rename(columns={
-                "name": "Subject", "difficulty": "Difficulty", "priority": "Priority"
-            })
-            st.dataframe(df, use_container_width=True, hide_index=True)
-
-            remove_name = st.selectbox(
-                "Select subject to remove", [s["name"] for s in subjects], key="remove_subj"
+            name = st.text_input(
+                "Subject Name",
+                key="subj_name",
+                placeholder="e.g. Data Structures"
             )
-            if st.button("Remove Subject", key="btn_remove_subj"):
-                dm.remove_subject(remove_name)
-                st.success(f"'{remove_name}' removed.")
-                st.rerun()
-        else:
-            st.info("No subjects added yet.")
+
+            difficulty = st.selectbox(
+                "Difficulty Level",
+                ["Easy", "Medium", "Hard"],
+                key="subj_diff"
+            )
+
+            priority = st.slider(
+                "Study Priority",
+                1, 5, 3,
+                key="subj_prio",
+                help="1 = lowest priority, 5 = highest priority"
+            )
+
+            priority_labels = {
+                1: "Very Low",
+                2: "Low",
+                3: "Medium",
+                4: "High",
+                5: "Very High"
+            }
+
+            st.caption(f"Selected priority: **{priority_labels[priority]}**")
+
+            st.write("")
+
+            if st.button(
+                "＋ Add Subject",
+                key="btn_add_subj",
+                type="primary",
+                use_container_width=True
+            ):
+                if name.strip():
+                    try:
+                        dm.add_subject(name.strip(), difficulty, priority)
+                        st.success(f"'{name.strip()}' added successfully.")
+                        st.rerun()
+                    except ValueError as e:
+                        st.error(str(e))
+                else:
+                    st.warning("Please enter a subject name.")
+
+    # RIGHT CARD — CURRENT SUBJECTS
+    with col2:
+        with st.container(border=True):
+            st.markdown("### 📚 Your subjects")
+            st.caption("Your currently registered study subjects.")
+
+
+            if subjects:
+                df = pd.DataFrame(subjects).rename(columns={
+                    "name": "Subject",
+                    "difficulty": "Difficulty",
+                    "priority": "Priority"
+                })
+
+                st.dataframe(
+                    df,
+                    use_container_width=True,
+                    hide_index=True
+                )
+
+                st.divider()
+
+                st.markdown("**Remove a subject**")
+
+                remove_name = st.selectbox(
+                    "Select subject",
+                    [s["name"] for s in subjects],
+                    key="remove_subj",
+                    label_visibility="collapsed"
+                )
+
+                if st.button(
+                    "Remove Subject",
+                    key="btn_remove_subj",
+                    use_container_width=True
+                ):
+                    dm.remove_subject(remove_name)
+                    st.success(f"'{remove_name}' removed.")
+                    st.rerun()
+
+            else:
+                st.info("No subjects added yet. Add your first subject using the form.")
+
 
 
 # ── Tab 2 – Exams ─────────────────────────────────────────────────────────────
