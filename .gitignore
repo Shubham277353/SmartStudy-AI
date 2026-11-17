@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Local application data
+data/study_data.json
+
+# Secrets
+.streamlit/secrets.toml
+.env
